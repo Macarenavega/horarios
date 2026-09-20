@@ -61,13 +61,22 @@ export function ExerciseCard({
     >
       {/* Animation zone */}
       <div
-        className="w-full relative overflow-hidden"
+        className="w-full relative overflow-hidden flex items-center justify-center"
         style={{
           height: '160px',
           background: 'linear-gradient(180deg, var(--c-surface-raised) 0%, var(--c-surface) 100%)',
         }}
       >
-        <exercise.Animation isActive={!allDone} />
+        <img
+          src={exercise.gifUrl}
+          alt={exercise.name}
+          style={{
+            height: '100%',
+            width: '100%',
+            objectFit: 'contain',
+            padding: '8px',
+          }}
+        />
 
         {/* Done overlay */}
         <AnimatePresence>

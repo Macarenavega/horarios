@@ -1,11 +1,6 @@
 import type { Exercise } from '../types';
-import { LegPressAnimation } from '../animations/LegPress';
-import { HipAbductionAnimation } from '../animations/HipAbduction';
-import { LegCurlAnimation } from '../animations/LegCurl';
-import { CableRowAnimation } from '../animations/CableRow';
-import { ChestPressAnimation } from '../animations/ChestPress';
-import { PlankAnimation } from '../animations/Plank';
-import { DeadBugAnimation } from '../animations/DeadBug';
+
+const BASE = 'https://cdn.jsdelivr.net/gh/JahelCuadrado/ExerciseGymGifsDB@v1.1.0';
 
 export const EXERCISES: Exercise[] = [
   {
@@ -23,7 +18,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Empieza con la carga más ligera. Si la espalda baja se despega del respaldo, reduce el peso.',
     youtube: 'https://www.youtube.com/watch?v=hl-EJUQ2yuc',
-    Animation: LegPressAnimation,
+    gifUrl: `${BASE}/quads/lever-alternate-leg-press.gif`,
   },
   {
     id: 'hip-abduction',
@@ -39,7 +34,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Movimiento lento y sin tirones. Si hay molestia en la cadera, reduce el rango de apertura.',
     youtube: 'https://www.youtube.com/watch?v=1nabNRrKUyU',
-    Animation: HipAbductionAnimation,
+    gifUrl: `${BASE}/abductors/lever-seated-hip-abduction.gif`,
   },
   {
     id: 'leg-curl',
@@ -55,7 +50,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Mantén la cabeza alineada con la columna, sin forzar el cuello hacia arriba. Peso muy ligero.',
     youtube: 'https://www.youtube.com/watch?v=kU6YEyUzPcA',
-    Animation: LegCurlAnimation,
+    gifUrl: `${BASE}/hamstrings/lever-lying-leg-curl.gif`,
   },
   {
     id: 'cable-row',
@@ -72,7 +67,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Peso muy suave. Si el cuello se tensa o los hombros suben, reduce el peso. Espalda baja neutra siempre.',
     youtube: 'https://www.youtube.com/watch?v=hiujo_wbkLU',
-    Animation: CableRowAnimation,
+    gifUrl: `${BASE}/upper-back/cable-seated-row.gif`,
   },
   {
     id: 'chest-press',
@@ -88,7 +83,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Si sientes pinzamiento en el hombro, para inmediatamente. Empieza con el peso más ligero. No hacer si el médico o fisio lo ha restringido.',
     youtube: 'https://www.youtube.com/watch?v=lw4uUkBl_HE',
-    Animation: ChestPressAnimation,
+    gifUrl: `${BASE}/pectorals/cable-seated-chest-press.gif`,
   },
   {
     id: 'plank',
@@ -104,7 +99,7 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Apoya las rodillas — es igual de válido y más seguro. Si el cuello se tensa, para y ajusta.',
     youtube: 'https://www.youtube.com/watch?v=qVnZtJGK4zY',
-    Animation: PlankAnimation,
+    gifUrl: `${BASE}/abs/front-plank-with-twist.gif`,
   },
   {
     id: 'dead-bug',
@@ -121,6 +116,6 @@ export const EXERCISES: Exercise[] = [
     ],
     warning: 'Ve muy despacio. Si la espalda baja se despega del suelo, no bajes tan abajo. Nunca fuerces el cuello.',
     youtube: 'https://www.youtube.com/watch?v=HN3wyEcYC2g',
-    Animation: DeadBugAnimation,
+    gifUrl: `${BASE}/abs/dead-bug.gif`,
   },
 ];

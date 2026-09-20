@@ -1,5 +1,3 @@
-import type { ComponentType } from 'react';
-
 export type TabId = 'calentamiento' | 'circuito' | 'vuelta';
 export type ExerciseCategory = 'lower' | 'upper' | 'core';
 
@@ -17,7 +15,7 @@ export interface Exercise {
   instructions: string[];
   warning: string;
   youtube: string;
-  Animation: ComponentType<AnimationProps>;
+  gifUrl: string;
 }
 
 export interface WorkoutState {
