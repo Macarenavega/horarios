@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --c-bg: #0A0A0F;
+  --c-surface: #13111A;
+  --c-surface-raised: #1C1928;
+  --c-border: #2A2640;
+  --c-text: #F0EAF8;
+  --c-muted: #6A6080;
+  --c-accent: #A78BFA;
+  --c-accent-dim: #1A1530;
+  --c-accent-text: #0D0A1F;
+  --c-warn: #F87171;
+  --c-warn-bg: #1C0E0E;
+  --c-success: #34D399;
+  --c-amber: #FBBF24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100dvh;
+  background: var(--c-bg);
+}
+
+/* ── Typography ────────────────────────────── */
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 2px; }
+
+/* ══════════════════════════════════════════
+   BIKE ANIMATION (Calentamiento)
+═══════════════════════════════════════════ */
+@keyframes wheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pedal-crank {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pedal-left {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pedal-right {
+  from { transform: rotate(180deg); }
+  to   { transform: rotate(540deg); }
+}
+@keyframes bike-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+@keyframes rider-bob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-2px); }
+}
+@keyframes leg-pedal-front {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes leg-pedal-back {
+  0%   { transform: rotate(180deg); }
+  100% { transform: rotate(540deg); }
+}
+
+.anim-wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wheel-spin 1s linear infinite;
+}
+.anim-bike-float {
+  animation: bike-float 2s ease-in-out infinite;
+}
+.anim-rider {
+  animation: rider-bob 2s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════
+   EXERCISE ANIMATIONS
+═══════════════════════════════════════════ */
+
+/* Leg Press */
+@keyframes lp-lower-leg {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 55%  { transform: rotate(-75deg); }
+}
+@keyframes lp-plate {
+  0%, 100% { transform: translateX(0px); }
+  45%, 55%  { transform: translateX(38px); }
+}
+
+/* Hip Abduction */
+@keyframes ha-left-leg {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 55%  { transform: rotate(-38deg); }
+}
+@keyframes ha-right-leg {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 55%  { transform: rotate(38deg); }
+}
+
+/* Leg Curl */
+@keyframes lc-lower-leg {
+  0%, 100% { transform: rotate(-70deg); }
+  45%, 55%  { transform: rotate(0deg); }
+}
+
+/* Cable Row */
+@keyframes cr-torso {
+  0%, 100% { transform: rotate(20deg); }
+  45%, 55%  { transform: rotate(0deg); }
+}
+@keyframes cr-arm {
+  0%, 100% { transform: rotate(-70deg); }
+  45%, 55%  { transform: rotate(0deg); }
+}
+
+/* Chest Press */
+@keyframes cp-forearm {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 55%  { transform: rotate(-50deg); }
+}
+
+/* Plank */
+@keyframes plank-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50%       { transform: scaleY(1.025); }
+}
+
+/* Dead Bug */
+@keyframes db-right-arm {
+  0%, 100%  { transform: rotate(0deg); }
+  20%, 45%  { transform: rotate(-130deg); }
+  50%       { transform: rotate(0deg); }
+}
+@keyframes db-left-leg {
+  0%, 100%  { transform: rotate(0deg); }
+  20%, 45%  { transform: rotate(50deg); }
+  50%       { transform: rotate(0deg); }
+}
+@keyframes db-left-arm {
+  0%, 50%   { transform: rotate(0deg); }
+  70%, 95%  { transform: rotate(-130deg); }
+  100%      { transform: rotate(0deg); }
+}
+@keyframes db-right-leg {
+  0%, 50%   { transform: rotate(0deg); }
+  70%, 95%  { transform: rotate(50deg); }
+  100%      { transform: rotate(0deg); }
+}
+
+/* ══════════════════════════════════════════
+   COMPLETION CONFETTI
+═══════════════════════════════════════════ */
+@keyframes confetti-fall {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(180px) rotate(720deg); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .anim-wheel, .anim-bike-float, .anim-rider,
+  [class*="anim-"] {
+    animation-play-state: paused !important;
+  }
+}
+
+/* ══════════════════════════════════════════
+   PROGRESS BAR
+═══════════════════════════════════════════ */
+@keyframes progress-shine {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ══════════════════════════════════════════
+   CARD GLOW PULSE
+═══════════════════════════════════════════ */
+@keyframes border-glow-flash {
+  0%   { box-shadow: 0 0 0 0 rgba(167,139,250,0); }
+  30%  { box-shadow: 0 0 0 3px rgba(167,139,250,0.6); }
+  100% { box-shadow: 0 0 0 0 rgba(167,139,250,0); }
+}
+.glow-flash {
+  animation: border-glow-flash 0.4s ease-out;
+}
+
+/* ══════════════════════════════════════════
+   MISC
+═══════════════════════════════════════════ */
+.tabular-nums { font-variant-numeric: tabular-nums; }
